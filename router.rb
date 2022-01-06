@@ -19,15 +19,15 @@ class Router
   private
 
   def print_menu
-    puts "--------------------"
-    puts "------- MENU -------"
-    puts "--------------------"
-    puts "1. Add new meal"
-    puts "2. List all meals"
-    puts "3. Add new customer"
-    puts "4. List all customers"
-    puts "8. Exit"
-    print "> "
+    puts '--------------------'
+    puts '------- MENU -------'
+    puts '--------------------'
+    puts '1. Add new meal'
+    puts '2. List all meals'
+    puts '3. Add new customer'
+    puts '4. List all customers'
+    puts '8. Exit'
+    print '> '
   end
 
   def route_action(choice)
@@ -37,7 +37,7 @@ class Router
     when 3 then @customers_controller.add
     when 4 then @customers_controller.list
     when 8 then stop!
-    else puts "Try again..."
+    else puts 'Try again by selecting either 1, 2, 3 or 4'
     end
   end
 
