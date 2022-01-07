@@ -10,7 +10,7 @@ class BaseRepository
 
   def add(element)
     element.id = @next_id
-    @elements  << element
+    @elements << element
     @next_id += 1
     write_csv
   end
@@ -21,7 +21,6 @@ class BaseRepository
 
   def write_csv
     CSV.open(@csv_file, 'w') do |csv|
-
       csv << @elements.first.class.headers
       @elements.each do |element|
         csv << element.to_csv_row
