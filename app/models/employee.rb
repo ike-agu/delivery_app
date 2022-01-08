@@ -9,6 +9,10 @@ class Employee
     @role = attributes[:role] #manager || delivery guy
   end
 
+  def manager?
+    @role = 'manger'
+  end
+
   def to_csv_row
     [@id, @username, @password, @role]
   end

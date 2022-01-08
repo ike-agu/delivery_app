@@ -12,14 +12,15 @@ class SessionController
     # ask uder for password
     password = @view.ask_user_for(:password)
     # find the employee with the username
-    employee = @employees_repository.find_by_username(username)
+     employee = @employee_repository.find_username(username)
     if employee && employee.password == password
-      # then employee logged in
-      @view.signed_in_successfully
+    #   # then employee logged in
+       @view.signed_in_successfully(employee)
+       return employee
     else
-      @view.wrong_credentials
-      sign_in # Recursive call
-      # compare the password given with the one in the DB
+       @view.wrong_credentials
+       sign_in # Recursive call
+    #   # compare the password given with the one in the DB
     end
   end
 end

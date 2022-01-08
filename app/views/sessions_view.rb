@@ -9,7 +9,11 @@ class SessionsView
     puts 'Wrong credentials...Try again!'
   end
 
-  def signed_in_successfully
-    puts 'You are Signed in!'
+  def signed_in_successfully(employee)
+    if employee.manager?
+      puts "[MANAGER] Welcome #{employee.username}!"
+    else
+      puts "[DELIVERY GUY] Welcome #{employee.username}!"
+    end
   end
 end
